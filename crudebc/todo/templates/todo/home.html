@@ -1,0 +1,11 @@
+{% extends 'todo/layout.html' %}
+
+{% block content %}
+   <table class="table table-hover">
+    {% for tarea in tareas %}
+        <li>{{ tarea }}</li>
+        <button><a href="{% url 'eliminar' tarea.id %}">Elimnar</a></button>
+        <button><a href="{% url 'editar' tarea.id %}">Editar</a></button>
+    {% endfor %}
+   </table>
+{% endblock %}   
